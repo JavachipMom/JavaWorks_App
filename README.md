@@ -24,4 +24,6 @@
   -Not many other apps like this.
   -People just go to the nearest coffeeshop and hope for the best
   -Too many features on other apps
-  
+
+##What are the increment steps to the solution??
+  -The minimum viable product will be to look for the nearest coffeeshop..
