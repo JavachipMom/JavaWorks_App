@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router'
+import ReactFire from 'reactfire'
 
 export default React.createClass({
+
   render() {
     return(
       <section>
@@ -11,7 +13,9 @@ export default React.createClass({
                className="background_pic"
                src="styles/coffee_collage.png"/>
              <form>
-               <input></input>
+               <input type="text"/>
+               <input type="text" />
+               <input type="submit"/>
              </form>
         </div>
       </section>
