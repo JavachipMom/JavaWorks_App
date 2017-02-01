@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 export default React.createClass({
   render() {
     return(
-      <footer>
+      <footer className="footer">
         
       </footer>
     )

@@ -12,19 +12,22 @@ export default React.createClass({
           signOutButton.className = "nav__signOut";
         }
         var currentUser = {};
+        var today = new Date();
 
         currentUser["/users/" + user.uid] = {
           email: user.email,
           name: user.displayName,
-          picture: user.photoURL
+          picture: user.photoURL,
+          lastLogin: today
         }
 
-  this.setState({
+        this.setState({
           currentName: user.email,
           name: user.displayName,
-          picture: user.photoURL
+          picture: user.photoURL,
+          lastLogin: user.lastLogin
         })
-}
+      }
   else { // signed out or something went wrong
       var signOutButton = document.querySelector("[data-js='nav__signOut']")
       if(signOutButton.className == "nav__signOut"){
@@ -72,13 +75,16 @@ export default React.createClass({
                className="logo"
                src="styles/logo2.png"/>
          <div>
-           <img className="nav__currentUserImage" src={this.state.picture} />
-           <button className="nav__signIn"
+          <img className="nav__currentUserImage"
+               src={this.state.picture} />
+          <button className="nav__signIn"
                    data-js="nav__signIn"
-                   onClick={this.signUserIn}> Log In </button>
-           <button className="nav__signOut--hide"
+                   onClick={this.signUserIn}> Log In
+          </button>
+          <button className="nav__signOut--hide"
                    data-js="nav__signOut"
-                   onClick={this.signUserOut}> Log Out</button>
+                   onClick={this.signUserOut}> Log Out
+          </button>
          </div>
         </nav>
       </header>

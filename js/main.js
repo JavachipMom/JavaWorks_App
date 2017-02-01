@@ -8,15 +8,19 @@ export default React.createClass({
     return(
       <section>
         <div>
-          <h1 className="see-through">"Search For Your Perfect JavaWorks"</h1>
+          <h1 className="see-through">"Search For Your Perfect JavaWorks"
+            <form>
+              <input className="search__bar"
+                     type="text"/>
+              <input className="search__button"
+                     type="submit"/>
+            </form>
+          </h1>
           <img alt="laptop"
                className="background_pic"
                src="styles/coffee_collage.png"/>
-             <form>
-               <input type="text"/>
-               <input type="text" />
-               <input type="submit"/>
-             </form>
+        </div>
+        <div>
         </div>
       </section>
     )
