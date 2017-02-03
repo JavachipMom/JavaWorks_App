@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+.address {
+  margin: 1%;
+}
+
 body {
   background-color: rgb(108,168,169);
 }
@@ -21,11 +25,17 @@ body {
 
 .footer {
   background-color: rgb(15,15,15);
-  display: inline-block;
+  /*display: inline-block;*/
   height: 200px;
   margin: -2px;
   position: absolute;
   width: 99%;
+}
+
+.hours {
+  display: inline-block;
+  font-size: xx-large;
+  list-style: none;
 }
 
 .links {
@@ -63,7 +73,7 @@ body {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    transition: color 0.6s, background-color 0.6s;
+    transition: color 0.6s; background-color: 0.6s;
 }
 
 .nav__signIn:hover, .nav__signOut:hover {
@@ -77,11 +87,58 @@ body {
   display: none;
 }
 
-.results__container {
-  background-color: rgb(255,255,255);
-  display: inline-block;
-  height: 100px;
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination li {display: inline;}
+
+ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+ul.pagination li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+
+.photo {
+  border-radius: 24px 0 24px;
+  float: right;
+  height: 200px;
   width: 200px;
+}
+
+.results {
+  background-color: rgb(255,255,255);
+  border-radius: 24px;
+  display: inline-block;
+  height: 50%;
+  margin-top: 10px;
+  width: 100%
+}
+
+.results__container {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+
+.results__title {
+  color: rgb(173,49,51);
+  display: inline-block;
+  font-family: fantasy;
+  font-size: -webkit-xxx-large;
+  margin: 1% 1%;
+  text-decoration: underline;
 }
 
 .search__bar {
@@ -99,6 +156,11 @@ body {
   height: 44px;
   -webkit-appearance: none;
   width: 90px;
+}
+
+.section {
+  display: inline-block;
+  width: 1250px;
 }
 
 .see-through {
