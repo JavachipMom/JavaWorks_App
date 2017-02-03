@@ -32,9 +32,9 @@ export default React.createClass({
       var signOutButton = document.querySelector("[data-js='nav__signOut']")
       if(signOutButton.className == "nav__signOut"){
         signOutButton.className = "nav__signOut--hide"
+        }
       }
-    }
-  })
+    })
   },
   getInitialState() {
     return {
@@ -71,9 +71,11 @@ export default React.createClass({
     return(
       <header>
         <nav>
-          <img alt="logo"
-               className="logo"
-               src="styles/logo2.png"/>
+          <Link to="/">
+            <img alt="logo"
+                 className="logo"
+                 src="styles/logo2.png"/>
+             </Link>
          <div>
           <img className="nav__currentUserImage"
                src={this.state.picture} />

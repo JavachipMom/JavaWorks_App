@@ -3,6 +3,9 @@ import { Link } from 'react-router'
 import ReactFire from 'reactfire'
 
 export default React.createClass({
+  onSubmit(){
+    console.log("I don't know where else to go")
+  },
 
   render() {
     return(
@@ -11,9 +14,13 @@ export default React.createClass({
           <h1 className="see-through">"Search For Your Perfect JavaWorks"
             <form>
               <input className="search__bar"
+                     onChange={this.onResults}
+                     placeholder="Type zip code here"
                      type="text"/>
               <input className="search__button"
-                     type="submit"/>
+                     onClick={this.onSubmit}
+                     type="submit"
+                     value="submit"/>
             </form>
           </h1>
           <img alt="laptop"
