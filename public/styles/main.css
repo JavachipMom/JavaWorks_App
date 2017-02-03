@@ -37,13 +37,6 @@ body {
   width: 17%;
 }
 
-.search__bar {
-  display: inline-block;
-  font-size: 30px;
-  height: 50px;
-  width: 60%;
-}
-
 .nav__currentUser {
   color: rgb(245, 245, 245);
   display: inline-block;
@@ -91,6 +84,23 @@ body {
   width: 200px;
 }
 
+.search__bar {
+  display: inline-block;
+  font-size: 30px;
+  height: 50px;
+  width: 25%;
+}
+
+.search__button {
+  background-color: rgb(232,88,74);
+  border-radius: 4px;
+  color: rgb(255,255,255);
+  font-size: x-large;
+  height: 44px;
+  -webkit-appearance: none;
+  width: 90px;
+}
+
 .see-through {
   background: rgba(15,15,15,.4);
   color: rgb(255,255,255);
@@ -103,4 +113,12 @@ body {
   margin: 0;
   text-align: center;
   width: 99%;
+}
+
+.select__options {
+  border-radius: 0px;
+  color: rgb(178,178,178);
+  font-size: xx-large;
+  height: 51px;
+  width: 300px;
 }

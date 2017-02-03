@@ -13,6 +13,17 @@ export default React.createClass({
         <div>
           <h1 className="see-through">"Search For Your Perfect JavaWorks"
             <form>
+              <select className="select__options">
+                <option className="options"
+                        value="faster wifi">Faster Wifi
+                </option>
+                <option className="options"
+                        value="comfort level">Comfort Level
+                </option>
+                <option className="options"
+                        value="noise level">Noise Level
+                </option>
+              </select>
               <input className="search__bar"
                      onChange={this.onResults}
                      placeholder="Type zip code here"
