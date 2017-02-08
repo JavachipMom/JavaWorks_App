@@ -1,18 +1,44 @@
 import React from 'react'
 import { Link } from 'react-router'
+import { ajax, post, parseJSON } from 'jquery'
 import ReactFire from 'reactfire'
+import Yelp from 'yelp'
+import Results from './results'
 
 export default React.createClass({
-  onSubmit(){
-    console.log("I don't know where else to go")
-  },
+  getInitialState(){
+    // This means, that in your other functions, this.state.searchResults will be an array
+    // FIXME: Put two "fake" search results in searchResults array
+    return {
+      businesses: [
 
+      ]
+    }
+  },
+  onSubmit(){
+    // Created a variable to reference the zipcode input
+    var zipcode = this.refs.zipcodeInput.value
+    console.log(zipcode);
+    ajax({
+      url: 'yelpdata.json?zip=' + zipcode,
+      success: (data) => {
+        console.log(data);
+        this.setState({
+          businesses: data.businesses
+        })
+      }
+    })
+    //FIXME: Implement this! See: https://github.com/tiy-sat/fall16-8.4-player-stats/blob/master/js/Stats.js
+    // 1) Get data from form - zip code, for instance
+    // 2) Make ajax() call to /yelpdata.json?zip={zipcode from form}
+    // 3) In "success" callback for ajax all, set up data and call setState()
+  },
   render() {
     return(
       <section>
         <div>
           <h1 className="see-through">"Search For Your Perfect JavaWorks"
-            <form>
+            <form onSubmit={this.handleSubmit}>
               <select className="select__options">
                 <option className="options"
                         value="faster wifi">Faster Wifi
@@ -25,11 +51,13 @@ export default React.createClass({
                 </option>
               </select>
               <input className="search__bar"
-                     onChange={this.onResults}
+                     onChange={this.handleChange}
                      placeholder="Type zip code here"
-                     type="text"/>
+                     ref = "zipcodeInput"
+                     type="text"
+                     value={this.state.value}/>
               <input className="search__button"
-                     onClick={this.onSubmit}
+                     onClick={ this.onSubmit }
                      type="submit"
                      value="submit"/>
             </form>
@@ -39,6 +67,7 @@ export default React.createClass({
                src="styles/coffee_collage.png"/>
         </div>
         <div>
+          <Results results={ this.state.businesses } />
         </div>
       </section>
     )

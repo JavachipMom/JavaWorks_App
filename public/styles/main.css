@@ -160,7 +160,7 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
 
 .section {
   display: inline-block;
-  width: 1250px;
+  width: 100%;
 }
 
 .see-through {

@@ -1,5 +1,3 @@
-import API from 'API-keys'
-
 var express = require('express');
 var app = express();
 
@@ -18,6 +16,8 @@ app.get('/', function(request, response) {
 });
 
 // Make these enviroment variables to keep my clientId and API key hidden without losing the data pulled in from Yelp
+var appId = '1xKHQ4OXmlNq1Yf1hbXgqA'
+var appSecret = 'roIFnbGOMrmvyNkrBFEHpZO1D51DCLseCjEFmiIE0crmNucNDO2H3JLI4tu5Xcgb'
 
 var yelpClient;
 
@@ -33,18 +33,19 @@ app.get('/yelpdata.json', function(req, resp) {
   // FIXME: Filter or control for valid values of 'zip'
   var searchRequest = {
     term: '',
-    location: req.query.zip || '78230',
+    location: req.query.zip,
     categories: 'coffee',
     radius: 8000
   };
-
+  console.log(searchRequest);
   yelpClient.search(searchRequest).then(response => {
-     const firstResult = response.jsonBody.businesses;
+     var results = response.jsonBody;
 
-     const prettyJson = JSON.stringify(firstResult, null, 4);
-     console.log(prettyJson);
+     const prettyJson = JSON.stringify(results, null, 4);
+    //  console.log(prettyJson);
+     resp.json(results);
 
-     resp.json(firstResult);
+
   });
 
 });
