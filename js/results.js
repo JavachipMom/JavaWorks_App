@@ -29,7 +29,7 @@ export default React.createClass({
                 <h3 className="address"> {business.location.zip_code} </h3>
               </div>
                 <ul className="hours">
-                  <li> Phone Number: {business.phone} </li>
+                  <li> Phone Number: <a href={business.phone}>{business.phone}</a></li>
                 </ul>
                 <img alt="picture 1"
                      className="photo"
