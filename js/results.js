@@ -10,8 +10,8 @@ export default React.createClass({
     }
   },
   render() {
-    console.log("RENDER")
-    console.log("BUS:" + this.props.results)
+    // console.log("RENDER")
+    // console.log("BUS:" + this.props.results)
     return(
       <section className="section">
         <div className="results__container">
@@ -29,7 +29,7 @@ export default React.createClass({
                 <h3 className="address"> {business.location.zip_code} </h3>
               </div>
                 <ul className="hours">
-                  <li> Phone Number: <a href={business.phone}>{business.phone}</a></li>
+                  <li> Phone Number: <a href={business.display_phone}>{business.display_phone}</a></li>
                 </ul>
                 <img alt="picture 1"
                      className="photo"
