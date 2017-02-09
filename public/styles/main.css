@@ -11,6 +11,10 @@ body {
 }
 
 .background_pic {
+  /*background: Thought I needed the tint but just edited the picture itself instead
+    linear-gradient(
+      rgba(15,15,15,.4),
+      rgba(255, 0, 0, 0.5);*/
   height: 100%;
   width: 100%;
 }
@@ -164,7 +168,7 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
 }
 
 .see-through {
-  background: rgba(15,15,15,.4);
+  /*background: rgba(15,15,15,.4);*/
   color: rgb(255,255,255);
   display: inline-block;
   font-family: fantasy;
