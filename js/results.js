@@ -22,14 +22,11 @@ export default React.createClass({
                        key={i}>
               <Link className="results__title"> {business.name} </Link>
               <div>
-                <h3 className="address"> Address: {business.location.address1} </h3>
-                <h3 className="address"> {business.location.address2} </h3>
-                <h3 className="address"> {business.location.city} </h3>
-                <h3 className="address"> {business.location.state} </h3>
-                <h3 className="address"> {business.location.zip_code} </h3>
+                <h3 className="address"> Address: {business.location.address1} {business.location.address2} </h3>
+                <h3 className="address"> {business.location.city}, {business.location.state} {business.location.zip_code} </h3>
               </div>
                 <ul className="hours">
-                  <li> Phone Number: <a href={business.display_phone}>{business.display_phone}</a></li>
+                  <li>Phone Number:<a href="tel:">{business.display_phone}</a></li>
                 </ul>
                 <img alt="picture 1"
                      className="photo"
