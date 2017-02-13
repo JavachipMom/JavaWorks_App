@@ -44,8 +44,18 @@ app.get('/yelpdata.json', function(req, resp) {
      const prettyJson = JSON.stringify(results, null, 4);
     //  console.log(prettyJson);
      resp.json(results);
+  });
+});
 
-
+app.get('/businessdata.json', function(req, resp) {
+  console.log();
+  // Bringing in the Yelp API for business details
+  yelpClient.business(req.query.id).then(response => {
+    console.log(response.jsonBody.name);
+    var results = response.jsonBody;
+    resp.json(results);
+  }).catch(e => {
+    console.log(e);
   });
 
 });

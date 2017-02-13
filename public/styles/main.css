@@ -3,6 +3,7 @@
 }
 
 .address {
+  display: inline-block;
   margin: 1%;
 }
 
@@ -15,7 +16,7 @@ body {
     linear-gradient(
       rgba(15,15,15,.4),
       rgba(255, 0, 0, 0.5);*/
-  height: 100%;
+  height: 500px;
   width: 100%;
 }
 
@@ -40,10 +41,17 @@ body {
   display: inline-block;
   font-size: xx-large;
   list-style: none;
+  margin-top: 0;
+  padding-left: 0.5em;
 }
 
 .links {
   color: rgb(255,255,255);
+}
+
+.location {
+  margin: 0 1em 0 0;
+  display: inline-block;
 }
 
 .logo {
@@ -121,6 +129,15 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
   width: 200px;
 }
 
+.result_page {
+  background-color: rgb(255,255,255);
+  border-radius: 24px;
+  display: inline-block;
+  height: 50%;
+  margin-top: 10px;
+  width: 100%
+}
+
 .results {
   background-color: rgb(255,255,255);
   border-radius: 24px;
@@ -173,7 +190,6 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
   display: inline-block;
   font-family: fantasy;
   font-size: 50px;
-  height: 100%;
   padding: 8%;
   position: absolute;
   margin: 0;

@@ -37,7 +37,9 @@ export default React.createClass({
     return(
       <section>
         <div>
-          <h1 className="see-through">"Search For Your Perfect JavaWorks"
+          <h1 className="see-through"
+              data-type='[ "Hi, Im Si.", "I am Creative.", "I Love Design.", "I Love to Develop." ]'>"Search For Your Perfect JavaWorks"
+              <span className="wrap"></span>
             <form onSubmit={this.handleSubmit}>
               <select className="select__options">
                 <option className="options"
