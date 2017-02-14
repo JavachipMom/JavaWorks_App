@@ -1,7 +1,10 @@
 var express = require('express');
 var app = express();
-
+// Bringing in the yelp-fusion API into the backend
+// server of the code
 var yelp = require('yelp-fusion');
+//Bring in the workfrom API into the backend as well
+var Workfrom = require('workfrom');
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -13,6 +16,22 @@ app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
   response.render('pages/index');
+});
+
+//Bring in the API
+app.get('/workfrom.json', function(req, resp) {
+  let wf = Workfrom({
+    id: 'WLaUmb9DV5bfKN4Z'
+  });
+
+  wf.places.near({
+    postalCode: req.query.zip,
+    limit: 20,
+    page: 1
+  }).then(results => {
+    resp.json(results);
+    console.log(results);
+  });
 });
 
 // Make these enviroment variables to keep my clientId and API key hidden without losing the data pulled in from Yelp

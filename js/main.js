@@ -15,7 +15,9 @@ export default React.createClass({
       ]
     }
   },
-  onSubmit(){
+  onSubmit(e){
+      e.preventDefault();
+      console.log("The button was clicked!!");
     // Created a variable to reference the zipcode input
     var zipcode = this.refs.zipcodeInput.value
     console.log(zipcode);
@@ -28,6 +30,7 @@ export default React.createClass({
         })
       }
     })
+
     //FIXME: Implement this! See: https://github.com/tiy-sat/fall16-8.4-player-stats/blob/master/js/Stats.js
     // 1) Get data from form - zip code, for instance
     // 2) Make ajax() call to /yelpdata.json?zip={zipcode from form}

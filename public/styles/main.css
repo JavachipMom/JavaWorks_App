@@ -20,6 +20,14 @@ body {
   width: 100%;
 }
 
+.business_name {
+  color: rgb(159,49,49);
+  font-family: fantasy;
+  font-size: 36px;
+  text-align: center;
+  text-decoration: underline;
+}
+
 .copyright {
   color: rgb(255,255,255);
 }
