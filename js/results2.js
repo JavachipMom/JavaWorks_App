@@ -44,9 +44,16 @@ export default React.createClass({
           <div className="photo_container">
           {images.map((photo, i) => {
                  return(
-                   <img className="yelp_photos"
-                        key={i}
-                        src= {photo} />
+                   <div className="dropdown">
+                     <img className="yelp_photos"
+                          key={i}
+                          src= {photo} />
+                        <div className="dropdown_content">
+                       <img className="yelp_photos1"
+                            key={i}
+                            src= {photo} />
+                     </div>
+                   </div>
                  )
                })}
           </div>
