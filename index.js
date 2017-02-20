@@ -54,7 +54,7 @@ app.get('/yelpdata.json', function(req, resp) {
     term: '',
     location: req.query.zip,
     categories: 'coffee',
-    radius: 8000
+    radius: ''
   };
   console.log(searchRequest);
   yelpClient.search(searchRequest).then(response => {

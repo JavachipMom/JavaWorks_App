@@ -1,83 +1,68 @@
 import React from 'react'
 import { Link } from 'react-router'
+import { ajax, post, parseJSON } from 'jquery'
+import Slider from 'react-slick'
 
 export default React.createClass({
+  getInitialState(){
+    return{
+      data: {
 
+      }
+    }
+  },
+  componentWillMount() {
+    //FIXME:
+    // 1. Make ajax call using this.props.params.idName
+    // 2. Use setState() to save results
+    // 3. In render() use this.state.... whatever from saved results
+    var business = this.props.params.idName
+    ajax({
+      url: 'businessdata.json?id=' + business,
+      success: (data) => {
+        console.log("this should show", data);
+        this.setState({data:data});
+        this.setState({
+          idName: data.idName
+        })
+      }
+    })
+  },
   render() {
+    var images = []
+    if (this.state.data.photos) {
+      images = this.state.data.photos
+    }
+    var address = []
+    if (this.state.data.location) {
+      address = this.state.data.location.display_address
+    }
     return(
       <section className="section">
-        <div className="results__container">
-          <article className="results">
-            <h2 className="results__title"> Rosella Coffee Shop </h2>
-            <h3 className="address">203 E Jones Ave
-                Unit 101
-                San Antonio, TX 78215
-            </h3>
-            <ul className="hours">
-              <li>Sunday 8:00 AM - 6:00 PM </li>
-              <li>Monday - Thursday 7:00 AM - 9:00 PM </li>
-              <li>Friday - Saturday 7:00 AM - 10:00 PM </li>
-            </ul>
-            <img alt="picture 1"
-                 className="photo"
-                 src="styles/coffeeshop.jpg"/>
-          </article>
-          <article className="results">
-            <h2 className="results__title"> Rosella Coffee Shop </h2>
-            <h3 className="address">203 E Jones Ave
-                Unit 101
-                San Antonio, TX 78215
-            </h3>
-            <ul className="hours">
-              <li>Sunday 8:00 AM - 6:00 PM </li>
-              <li>Monday - Thursday 7:00 AM - 9:00 PM </li>
-              <li>Friday - Saturday 7:00 AM - 10:00 PM </li>
-            </ul>
-            <img alt="picture 2"
-                 className="photo"
-                 src="styles/coffeeshop.jpg"/>
-          </article>
-          <article className="results">
-            <h2 className="results__title"> Rosella Coffee Shop </h2>
-            <h3 className="address">203 E Jones Ave
-                Unit 101
-                San Antonio, TX 78215
-            </h3>
-            <ul className="hours">
-              <li>Sunday 8:00 AM - 6:00 PM </li>
-              <li>Monday - Thursday 7:00 AM - 9:00 PM </li>
-              <li>Friday - Saturday 7:00 AM - 10:00 PM </li>
-            </ul>
-            <img alt="picture 3"
-                 className="photo"
-                 src="styles/coffeeshop.jpg"/>
-          </article>
-          <article className="results">
-            <h2 className="results__title"> Rosella Coffee Shop </h2>
-            <h3 className="address">203 E Jones Ave
-                Unit 101
-                San Antonio, TX 78215
-            </h3>
-            <ul className="hours">
-              <li>Sunday 8:00 AM - 6:00 PM </li>
-              <li>Monday - Thursday 7:00 AM - 9:00 PM </li>
-              <li>Friday - Saturday 7:00 AM - 10:00 PM </li>
-            </ul>
-            <img alt="picture 4"
-                 className="photo"
-                 src="styles/coffeeshop.jpg"/>
-          </article>
+        <div className="result_page">
+          <h1 className="business_name"> { this.state.data.name } </h1>
+          <div className="photo_container">
+          {images.map((photo, i) => {
+                 return(
+                   <img className="yelp_photos"
+                        key={i}
+                        src= {photo} />
+                 )
+               })}
+          </div>
+          <h2 className="address1"> Address:
+            { address.map((line, i) => {
+              return(
+              <p className="addresses"
+                 key={i}>{line}
+              </p>
+              )
+            })}
+          </h2>
+          <h2 className="phoneNumber"> Phone Number: <a href="tel:">{ this.state.data.display_phone }</a></h2>
+          <h2 className="price"> Price range: </h2>
+          <h2 className="pricePoint"> { this.state.data.price } </h2>
         </div>
-        <ul className="pagination">
-          <li><Link to="/results"href="#">«</Link></li>
-          <li><Link to="/results"href="#">1</Link></li>
-          <li><Link to="/results2"href="#">2</Link></li>
-          <li><Link to="/results3"href="#">3</Link></li>
-          <li><Link to="/results4"href="#">4</Link></li>
-          <li><Link to="/results5"href="#">5</Link></li>
-          <li><Link to="/results6"href="#">6</Link></li>
-          <li><Link to="/results"href="#">»</Link></li>
-        </ul>
       </section>
     )
   }

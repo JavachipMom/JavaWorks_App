@@ -24,10 +24,9 @@ export default React.createClass({
               <div>
                 <h3 className="address"> Address: {business.location.address1} {business.location.address2} </h3>
                 <h3 className="location"> {business.location.city}, {business.location.state} {business.location.zip_code} </h3>
+                <h3 className="rating"> Rating: { business.rating } Stars </h3>
               </div>
-                <ul className="hours">
-                  <li>Phone Number:<a href="tel:">{business.display_phone}</a></li>
-                </ul>
+                  <h3 className="phoneNumber1">Phone Number:<a href="tel:">{business.display_phone}</a></h3>
                 <img alt="picture 1"
                      className="photo"
                      src= {business.image_url} />

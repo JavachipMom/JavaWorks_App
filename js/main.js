@@ -15,9 +15,11 @@ export default React.createClass({
       ]
     }
   },
-  onSubmit(e){
+  onSubmit(){
+    function handleClick(e) {
       e.preventDefault();
       console.log("The button was clicked!!");
+    }
     // Created a variable to reference the zipcode input
     var zipcode = this.refs.zipcodeInput.value
     console.log(zipcode);
@@ -40,9 +42,7 @@ export default React.createClass({
     return(
       <section>
         <div>
-          <h1 className="see-through"
-              data-type='[ "Hi, Im Si.", "I am Creative.", "I Love Design.", "I Love to Develop." ]'>"Search For Your Perfect JavaWorks"
-              <span className="wrap"></span>
+          <h1 className="see-through">"Search For Your Perfect JavaWorks"
             <form onSubmit={this.handleSubmit}>
               <select className="select__options">
                 <option className="options"
