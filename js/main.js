@@ -15,11 +15,9 @@ export default React.createClass({
       ]
     }
   },
-  onSubmit(){
-    function handleClick(e) {
-      e.preventDefault();
+  onSubmit(e){
+    e.preventDefault();
       console.log("The button was clicked!!");
-    }
     // Created a variable to reference the zipcode input
     var zipcode = this.refs.zipcodeInput.value
     console.log(zipcode);
