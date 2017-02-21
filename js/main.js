@@ -30,7 +30,6 @@ export default React.createClass({
         })
       }
     })
-
     //FIXME: Implement this! See: https://github.com/tiy-sat/fall16-8.4-player-stats/blob/master/js/Stats.js
     // 1) Get data from form - zip code, for instance
     // 2) Make ajax() call to /yelpdata.json?zip={zipcode from form}

@@ -6,8 +6,6 @@
   <body>
     <main id="app">
     </main>
-    <div id="map">
-    </div>
   </body>
     <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
   <script>
@@ -19,8 +17,14 @@
       messagingSenderId: "366958075790"};
     firebase.initializeApp(config);
   </script>
-  <!-- <script async defer
+  <script type="text/javascript">
+    var googleMapsLoaded = false;
+    function initMap() {
+      googleMapsLoaded = true;
+    }
+  </script>
+  <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARdOqI9nFp8DW8QY_j_4IMyfCJAwfI2wQ&callback=initMap">
-  </script> -->
+  </script>
   <script src="dist/bundle.js" charset="utf-8"></script>
 </html>

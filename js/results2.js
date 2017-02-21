@@ -25,19 +25,28 @@ export default React.createClass({
         this.setState({
           idName: data.idName
         })
+        this.doGoogleMapThing()
       }
     })
   },
+  doGoogleMapThing() {
+    console.log(googleMapsLoaded);
+    console.log("COORDS: ", this.state.data.coordinates)
+    var uluru = { lat: (this.state.data.coordinates.latitude), lng: (this.state.data.coordinates.longitude) };
+    var map = new google.maps.Map(this.refs.googleMap, {
+      zoom: 15,
+      center: uluru
+    });
+
+    console.log("MAP: ", this.refs.googleMap)
+    console.log("MAP OBJ: ", map)
+    var marker = new google.maps.Marker({
+      position: uluru,
+      map: map
+    });
+  },
  //  initMap() {
- //    var uluru = {lat: 29.4359881103497, lng: -98.4804011200274};
- //    var map = new google.maps.Map(document.getElementById('map'), {
- //      zoom: 15,
- //      center: uluru
- //    });
- //    var marker = new google.maps.Marker({
- //      position: uluru,
- //      map: map
- //  });
+
  // },
   render() {
     var images = []
@@ -68,6 +77,7 @@ export default React.createClass({
                  )
                })}
           </div>
+            <div>
           <h2 className="address1"> Address:
             { address.map((line, i) => {
               return(
@@ -80,6 +90,12 @@ export default React.createClass({
           <h2 className="phoneNumber"> Phone Number: <a href="tel:">{ this.state.data.display_phone }</a></h2>
           <h2 className="price"> Price range: </h2>
           <h2 className="pricePoint"> { this.state.data.price } </h2>
+            <div className="map_container">
+              <div className="map" ref="googleMap">
+
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     )
