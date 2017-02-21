@@ -42,8 +42,10 @@ export default React.createClass({
     return(
       <section>
         <div>
-          <h1 className="see-through">"Search For Your Perfect JavaWorks"
-            <form onSubmit={this.handleSubmit}>
+          <h1 className="line-1 anim-typewriter">"Search For Your PerFect JavaWorks"
+          </h1>
+            <form className="form"
+                  onSubmit={this.handleSubmit}>
               <select className="select__options">
                 <option className="options"
                         value="faster wifi">Faster Wifi
@@ -66,7 +68,7 @@ export default React.createClass({
                      type="submit"
                      value="submit"/>
             </form>
-          </h1>
+
           <img alt="laptop"
                className="background_pic"
                src="styles/coffee_collage.png"/>

@@ -28,6 +28,17 @@ export default React.createClass({
       }
     })
   },
+ //  initMap() {
+ //    var uluru = {lat: 29.4359881103497, lng: -98.4804011200274};
+ //    var map = new google.maps.Map(document.getElementById('map'), {
+ //      zoom: 15,
+ //      center: uluru
+ //    });
+ //    var marker = new google.maps.Marker({
+ //      position: uluru,
+ //      map: map
+ //  });
+ // },
   render() {
     var images = []
     if (this.state.data.photos) {
