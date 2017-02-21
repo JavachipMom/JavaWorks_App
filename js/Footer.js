@@ -9,8 +9,16 @@ export default React.createClass({
         <ul>
           <li className="links">Contact</li>
           <li className="links">About us</li>
-          <li className="links">Developers</li>
-          <li className="links">Portfolio</li>
+          <li>
+            <Link className="links"
+                href="https://github.com/JavachipMom">Developers
+            </Link>
+          </li>
+          <li>
+            <Link className="links"
+                href="http://shauricenicole.herokuapp.com/#/">Portfolio
+            </Link>
+          </li>
         </ul>
       </footer>
     )
