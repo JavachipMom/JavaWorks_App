@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
 import { ajax, post, parseJSON } from 'jquery'
-import Carousel from 'react-responsive-carousel'
 
 
 export default React.createClass({
