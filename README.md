@@ -3,7 +3,7 @@
   JavaWorks a local coffeeshop search app for remote developers
 
 ##Elevator Pitch
-  My project called JavaWorks is an app for remote workers(like developers) to use to find local coffeeshops in the area that offer the best wifi speeds, detailed description of comfortability, and price of items..
+  My project called JavaWorks is an app for remote workers(like developers) to use to find local coffeeshops in the area that offer the best wifi speeds, detailed description of comfortability, and price of items.
 
 ##Desired Outcome
   Who is my target users?
@@ -19,6 +19,8 @@
   -The info could be wrong or obsolete..
   -Not quick enough with the updated info.
   -Location could be wrong.
+  -Implementing the requirements of a wifi test.
+
 
 ##Why don't they have it already??
   -Not many other apps like this.
@@ -26,4 +28,4 @@
   -Too many features on other apps
 
 ##What are the increment steps to the solution??
-  -The minimum viable product will be to look for the nearest coffeeshop..
+  -The minimum viable product will be to look for the nearest coffeeshop within the zipcode that is input on main page.
