@@ -35,6 +35,18 @@ export default React.createClass({
     // 1) Get data from form - zip code, for instance
     // 2) Make ajax() call to /yelpdata.json?zip={zipcode from form}
     // 3) In "success" callback for ajax all, set up data and call setState()
+    // FIXME: Get the select option dropdown to work properly after the demo day.
+    // <select className="select__options">
+    //   <option className="options"
+    //           value="faster wifi">Faster Wifi
+    //   </option>
+    //   <option className="options"
+    //           value="comfort level">Comfort Level
+    //   </option>
+    //   <option className="options"
+    //           value="noise level">Noise Level
+    //   </option>
+    // </select>
   },
   render() {
     return(
@@ -44,17 +56,6 @@ export default React.createClass({
           </h1>
             <form className="form"
                   onSubmit={this.handleSubmit}>
-              <select className="select__options">
-                <option className="options"
-                        value="faster wifi">Faster Wifi
-                </option>
-                <option className="options"
-                        value="comfort level">Comfort Level
-                </option>
-                <option className="options"
-                        value="noise level">Noise Level
-                </option>
-              </select>
               <input className="search__bar"
                      onChange={this.handleChange}
                      placeholder="Type zip code here"
