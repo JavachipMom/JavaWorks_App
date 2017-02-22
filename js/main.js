@@ -15,6 +15,7 @@ export default React.createClass({
       ]
     }
   },
+  // In the React documentation I had a click event inside a click event and needed to take the other function out to make it work and have e defined..
   onSubmit(e){
     e.preventDefault();
       console.log("The button was clicked!!");

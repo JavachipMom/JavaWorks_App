@@ -7,16 +7,20 @@ export default React.createClass({
       <footer className="footer">
         <h4 className="copyright"> Copyright 2017 </h4>
         <ul>
-          <li className="links">Contact</li>
+          <li>
+            <Link className="links"
+                  to="/contactUs">Contact
+            </Link>
+          </li>
           <li className="links">About us</li>
           <li>
             <Link className="links"
-                href="https://github.com/JavachipMom">Developers
+                  href="https://github.com/JavachipMom">Developers
             </Link>
           </li>
           <li>
             <Link className="links"
-                href="http://shauricenicole.herokuapp.com/#/">Portfolio
+                  href="http://shauricenicole.herokuapp.com/#/">Portfolio
             </Link>
           </li>
         </ul>

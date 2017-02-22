@@ -5,6 +5,7 @@ import App from './app'
 import Main from './main'
 import Results from './results'
 import Results2 from './results2'
+import ContactUs from './ContactUs'
 
 
 render(
@@ -14,6 +15,7 @@ render(
        <Route path="/" component={Main} />
        <Route path="results" component={Results} />
        <Route path="/shops/:idName" component={Results2} />
+       <Route path="/ContactUs" component={ContactUs} />
      </Route>
    </Router>
   ),

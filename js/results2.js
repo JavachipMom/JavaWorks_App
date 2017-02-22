@@ -34,7 +34,7 @@ export default React.createClass({
     console.log("COORDS: ", this.state.data.coordinates)
     var uluru = { lat: (this.state.data.coordinates.latitude), lng: (this.state.data.coordinates.longitude) };
     var map = new google.maps.Map(this.refs.googleMap, {
-      zoom: 15,
+      zoom: 18,
       center: uluru
     });
 
@@ -78,23 +78,28 @@ export default React.createClass({
                })}
           </div>
             <div>
-          <h2 className="address1"> Address:
-            { address.map((line, i) => {
-              return(
-              <p className="addresses"
-                 key={i}>{line}
-              </p>
-              )
-            })}
-          </h2>
-          <h2 className="phoneNumber"> Phone Number: <a href="tel:">{ this.state.data.display_phone }</a></h2>
-          <h2 className="price"> Price range: </h2>
-          <h2 className="pricePoint"> { this.state.data.price } </h2>
-            <div className="map_container">
-              <div className="map" ref="googleMap">
-
+              <div className="info_container">
+                <h2 className="address1"> Address:
+                  { address.map((line, i) => {
+                    return(
+                    <p className="addresses"
+                       key={i}>{line}
+                    </p>
+                    )
+                  })}
+                </h2>
+                <h2 className="phoneNumber"> Phone Number:
+                  <a href="tel:">{ this.state.data.display_phone }
+                  </a>
+                </h2>
+                <h2 className="price"> Price range: </h2>
+                <h2 className="pricePoint"> { this.state.data.price } </h2>
               </div>
-            </div>
+              <div className="map_container">
+                <div className="map" ref="googleMap">
+
+                </div>
+              </div>
           </div>
         </div>
       </section>
