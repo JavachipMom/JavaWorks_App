@@ -52,7 +52,7 @@ export default React.createClass({
     return(
       <section>
         <div>
-          <h1 className="line-1 anim-typewriter">"Search For Your PerFect JavaWorks"
+          <h1 className="line-1 anim-typewriter">"Search For Your Perfect JavaWorks"
           </h1>
             <form className="form"
                   onSubmit={this.handleSubmit}>
